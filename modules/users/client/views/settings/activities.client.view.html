@@ -1,0 +1,73 @@
+<section>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <table class="table table-bordered" data-ng-controller="PokemapsController" data-ng-init="find()">
+                <tr>
+                    <td class="text-center">List of Pokemons that I've added:</td>
+                </tr>
+                <tr ng-repeat="pokemap in pokemaps" ng-if="authentication.user._id == pokemap.user._id">
+                    <td>{{pokemap.title}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <table class="table table-bordered" data-ng-controller="ProfileInstinctController" ng-if="authentication.user.team == 'Instinct'">
+                <tr>
+                    <td class="text-center">Recent Posts of Team Instinct:</td>
+                </tr>
+                <tr ng-repeat="instinctpost in instinctposts">
+                    <td><a href="/instinctposts/{{instinctpost._id}}" style="color:black;">{{instinctpost.title}}</a></td>
+                </tr>
+            </table>
+            <table class="table table-bordered" data-ng-controller="ProfileMysticController" ng-if="authentication.user.team == 'Mystic'">
+                <tr>
+                    <td class="text-center">Recent Posts of Team Mystic:</td>
+                </tr>
+                <tr ng-repeat="mysticpost in mysticposts">
+                    <td><a href="/mysticposts/{{mysticpost._id}}" style="color:black;">{{mysticpost.title}}</a></td>
+                </tr>
+            </table>
+            <table class="table table-bordered" data-ng-controller="ProfileValorController" ng-if="authentication.user.team == 'Valor'">
+                <tr>
+                    <td class="text-center">Recent Posts of Team Valor:</td>
+                </tr>
+                <tr ng-repeat="valorpost in valorposts">
+                    <td><a href="/valorposts/{{valorpost._id}}" style="color:black;">{{valorpost.title}}</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <table class="table table-bordered" data-ng-controller="InstinctEventsCtrl" ng-if="authentication.user.team == 'Instinct'">
+                <tr>
+                    <td class="text-center" colspan="2">Events of Team Instinct:</td>
+                </tr>
+                <tr ng-repeat="instinctevent in instinctevents">
+                    <td>{{instinctevent.title}}</td>
+                    <td>{{instinctevent.info}}</td>
+                </tr>
+            </table>
+
+            <table class="table table-bordered" data-ng-controller="MysticEventsCtrl" ng-if="authentication.user.team == 'Mystic'">
+                <tr>
+                    <td class="text-center">Events of Team Mystic:</td>
+                </tr>
+                <tr ng-repeat="mysticevent in mysticevents">
+                    <td>{{mysticevent.title}}</td>
+                </tr>
+            </table>
+
+            <table class="table table-bordered" data-ng-controller="ValorEventsCtrl" ng-if="authentication.user.team == 'Valor'">
+                <tr>
+                    <td class="text-center">Events of Team Valor:</td>
+                </tr>
+                <tr ng-repeat="valorevent in valorevents">
+                    <td>{{valorevent.title}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+        </div>
+    </div>
+</section>

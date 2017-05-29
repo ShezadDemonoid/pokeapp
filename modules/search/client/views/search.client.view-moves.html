@@ -1,0 +1,111 @@
+<section ng-data-controller="MovesController">
+    <div class="m_top_30px container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <a ng-model="collapsed" ng-click="collapsed1=!collapsed1" class="hover_title">Tutor Moves</a>
+                            </div>
+                                <div class="panel-body" ng-show="collapsed1">
+                                    <ul class="nav nav-pills">
+                                        <li ng-if="move.learn_type == 'tutor'" ng-repeat="move in pokemon.moves" ng-class="{ active : isActive(move.resource_uri.split('/')[4]) } " class="hover_title">
+                                            <a ng-click="selectMoves(move.resource_uri.split('/')[4])" class='nav-pill'>
+                                                {{move.name}}
+                                                <span class="badge">
+                                                    TUT
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <a ng-model="collapsed" ng-click="collapsed2=!collapsed2" class="hover_title">Machine Moves</a>
+                            </div>
+                                <div class="panel-body scroll" ng-show="collapsed2">
+                                    <ul class="nav nav-pills">
+                                        <li ng-if="move.learn_type == 'machine'" ng-repeat="move in pokemon.moves" ng-class="{ active : isActive(move.resource_uri.split('/')[4]) } " class="hover_title">
+                                            <a ng-click="selectMoves(move.resource_uri.split('/')[4])" class='nav-pill'>
+                                                {{move.name}}
+                                                <span class="badge">
+                                                    HM
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <a ng-model="collapsed" ng-click="collapsed3=!collapsed3" class="hover_title">Egg Moves</a>
+                            </div>
+                                <div class="panel-body" ng-show="collapsed3">
+                                    <ul class="nav nav-pills">
+                                        <li ng-if="move.learn_type == 'egg move'" ng-repeat="move in pokemon.moves" ng-class="{ active : isActive(move.resource_uri.split('/')[4]) } " class="hover_title">
+                                            <a ng-click="selectMoves(move.resource_uri.split('/')[4])" class='nav-pill'>
+                                                {{move.name}}
+                                                <span class="badge">
+                                                    EGG
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <a ng-model="collapsed" ng-click="collapsed4=!collapsed4" class="hover_title">Other Moves</a>
+                            </div>
+                                <div class="panel-body" ng-show="collapsed4">
+                                    <ul class="nav nav-pills">
+                                        <li ng-if="move.learn_type != 'machine' && move.learn_type != 'tutor' && move.learn_type != 'egg move'" ng-repeat="move in pokemon.moves" ng-class="{ active : isActive(move.resource_uri.split('/')[4]) } " class="hover_title">
+                                            <a ng-click="selectMoves(move.resource_uri.split('/')[4])" class='nav-pill'>
+                                                {{move.name}}
+                                                <span class="badge">
+                                                    {{move.level}}
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class='panel panel-default'>
+                <div class='panel-body'>
+                    <p class="text-center"><b>Click on one of the moves and it will appear right below!</b></p>
+                </div>
+            </div>
+            <div class='panel panel-default' ng-show='moves'>
+                <div class='panel-heading text-center'>
+                    {{moves.name}}
+                </div>
+                <div class='panel-body'>
+                    {{moves.description}}
+                    <ul>
+                        <li><b>Power:</b> {{moves.power}}</li>
+                        <li><b>Accuracy:</b> {{moves.accuracy}}</li>
+                        <li><b>PP:</b> {{moves.pp}}</li>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+</section>

@@ -1,0 +1,43 @@
+<section ng-controller="HomeController">
+  <div class="jumbotron text-center">
+      <h2 style="color:white;">Welcome to PokeApp</h2>
+			<p style="color:white;font-size:18px;" ng-hide="authentication.user.roles == 'user' || authentication.user.roles == 'admin'">Sign in/up to access all features of the app</p>
+      <span ng-hide="authentication.user.roles == 'user' || authentication.user.roles == 'admin'">
+				<button type="button" class="bg_btnHome btn btn-inverse" ui-sref="authentication.signin">Sign In</button>
+				<button type="button" class="bg_btnHome btn btn-inverse" ui-sref="authentication.signup">Sign Up</button>
+      </span>
+  </div>
+
+  <!-- What is -->
+	<div id="whatis" class="content-section-b" style="border-top: 0">
+		<div class="container">
+
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<h2>PokeApp?</h2>
+        <br/>
+      </div>
+			
+			<div class="row">
+        <div class="col-sm-4 text-center">
+				  <a href="/pokemaps"><img src="modules/core/client/img/map.png" class="img-thumbnail"></a>
+          <h3>PokeMap</h3>
+				  <p>In the PokeMap section, you'll find about all the pokemons that has been discovered and added by our registered users throughout the world. </p>
+				</div>
+				
+				<div class="col-sm-4 text-center">
+				  <a href="/search"><img src="modules/core/client/img/search.png" class="img-thumbnail"></a>
+				   <h3>PokeSearch</h3>
+				   <p>In the PokeSearch section, you'll be able to find all pokemons used in the Pokemon Go game.</p>
+				</div>
+				
+				<div class="col-sm-4 text-center">
+				  <a href="/quiz"><img src="modules/core/client/img/quiz.png" class="img-thumbnail"></a>
+				   <h3>PokeQuiz</h3>
+					<p>In the PokeQuiz section, you'll be able to test your knowledge of pokemon.</p>
+				</div>
+      </div><!-- /.row -->
+
+		</div>
+	</div>
+	<br/><br/>
+</section>

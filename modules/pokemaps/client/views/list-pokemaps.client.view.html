@@ -1,0 +1,49 @@
+<section data-ng-controller="PokemapsController" data-ng-init="find()">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="page-header">
+					<h1>Pokemap</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8 col-md-8 col-lg-8">
+				<div class="list-group">
+					<!-- map -->
+		
+					<map center="[0,0]" zoom="3">
+						<marker ng-repeat='pokemap in pokemaps' position='[{{pokemap.lat}},{{pokemap.lon}}]' visible="true" on-click="gotolink(event,pokemap)" icon="modules/pokemaps/client/img/poke.png" >
+						</marker>
+					</map>
+
+					<a data-ng-repeat="pokemap in pokemaps" data-ng-href="/pokemaps/{{pokemap._id}}" class="list-group-item">
+						
+						<h4 class="list-group-item-heading" data-ng-bind="pokemap.title"></h4>
+
+						<p class="list-group-item-text" data-ng-bind="pokemap.content"></p>
+						<p class="list-group-item-text" data-ng-bind="pokemap.lat"></p>
+						<p class="list-group-item-text" data-ng-bind="pokemap.lon"></p>
+					</a>
+
+				</div>
+
+				<!-- if theres no pokemaps length. -->
+				<div class="alert alert-warning text-center" data-ng-if="pokemaps.$resolved && !pokemaps.length">
+					No pokemons yet, why don't you <a href="/pokemaps/create">create one</a>?
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="well well-lg">
+					<h3>Disclaimer!</h3>
+					<p>This Web app is for entertainment purposes only.</p>
+					<p>Please refrain from adding pokemon in location where you know it is difficult to access. Or else you can add relevant information about the location in the additional info.</p>
+					<p>We are not responsible for any incidents that can happen with you. Please play safe!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</section>

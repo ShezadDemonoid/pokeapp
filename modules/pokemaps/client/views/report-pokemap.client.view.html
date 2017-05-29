@@ -1,0 +1,42 @@
+<section data-ng-controller="PokemapsController" data-ng-init="findOne()">
+    <div class="page-header">
+		<h1>Report Pokemon</h1>
+	</div>
+	<div class="col-sm-12 col-md-12 col-lg-12" ng-controller="ReportMapCtrl">
+        <fieldset>
+            <map zoom ='5'>
+                <marker position="[0,0]" visible="true"></marker>
+  				<!-- a initial position must be set because it will prompt the users current geolocation and set it to that -->
+			</map>
+            <form name="reportForm" ng-submit="report()">
+                <div class="col-sm-2">
+                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="title" data-ng-model="pokemap.title" disabled>
+                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="lat" data-ng-model="pokemap.lat" disabled>
+                    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="lon" data-ng-model="pokemap.lon" disabled>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="pokemap.optionsMap" ng-value="'This area is dangerous.'">
+                            This area is dangerous.
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="pokemap.optionsMap" ng-value="'No pokemon was found in that area.'">
+                            No pokemon was found in that area.
+                        </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="pokemap.optionsMap" ng-value="'It is a spam.'">
+                            It is a spam.
+                    </label>
+                </div>
+                <span>
+                    <button class="btn btn_color btn-xs" type="submit">Report</button>
+                </span>
+            </form>
+
+        </fieldset>
+	</div>
+</section>

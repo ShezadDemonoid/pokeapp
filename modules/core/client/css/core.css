@@ -1,0 +1,72 @@
+.content {
+  margin-top: 50px;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+.icon-image{
+  height: 38px;
+  width: 110px;
+}
+html{
+  position: relative;
+  min-height: 92%;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: black;
+}
+
+.terms_m{
+  margin-top: 15px;
+}
+.jumbotron{
+  background-color: #00cc99 !important;
+}
+
+.bg_btnHome{
+    background: transparent;
+    color:white;
+    border:1px solid white !important;
+}
+
+.bg_btnHome:hover{
+    background-color: white!important;
+    color:#00e6ac !important;
+}

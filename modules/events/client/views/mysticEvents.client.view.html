@@ -1,0 +1,103 @@
+<section ng-controller="MysticEventsCtrl">
+  <div class="container">
+    <div class="m_top_30px row">
+
+      <!--List of Guidelines-->
+      <div class="col-sm-3 col-md-3 col-lg-3">
+        <h4 class="text-center">Guidelines</h4>
+        <br/>
+      </div>
+      <!--End of list of guidelines-->
+
+      <!--Event form-->
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <h4 class="text-center">Add an event</h4>
+        <br/>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="title">Title:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="title" ng-model="mysticevent.title">
+            </div>
+          </div>
+          <br/>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="time">Time:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="time" ng-model="mysticevent.time">
+            </div>
+          </div>
+          <br/>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="date">Date:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="date" ng-model="mysticevent.date">
+            </div>
+          </div>
+          <br/>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="location">Location:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="location" ng-model="mysticevent.location">
+            </div>
+          </div>
+          <br/>
+
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="info">More Info:</label>
+            <div class="col-sm-9">
+             <textarea class="form-control" style="resize:none;" rows="4" placeholder="More info about that event..." id="info" ng-model="mysticevent.info"></textarea>
+            </div>
+          </div>
+          <br/>
+
+          <div class="form-group pull-right">
+            <span class="cols-sm-4">
+              <button class="btn btn_color btn-xs" ng-click="addMEvent()">Add</button>
+            </span>
+            <span class="cols-sm-4">
+              <button class="btn btn_color btn-xs" ng-click="updateMEvent()">Update</button>
+            </span>
+            <span class="cols-sm-4">
+              <button class="btn btn_color btn-xs" ng-click="clearMEventFields()">Clear</button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <!--End of event form-->
+
+      <!--Display Events-->
+      <div class="col-sm-5 col-md-5 col-lg-5">
+        <h4 class="text-center">List of Mystic Events</h4>
+        <br/>
+        <div class="panel panel-default">
+          <div class="panel-body" ng-repeat="mysticevent in mysticevents">
+            <table>
+              <tr>
+                <td class="event_date">{{mysticevent.date}}</td>
+                <td class="event_title">&nbsp&nbsp&nbsp&nbsp {{mysticevent.title}}</td>
+              </tr>
+            </table>
+            <br/>
+            <p>{{mysticevent.info}}</p>
+            <span class="pull-left">
+              <span class="event_date glyphicon glyphicon-globe">{{mysticevent.location}}</span>
+              &nbsp&nbsp&nbsp&nbsp
+              <span class="event_date glyphicon glyphicon-time">{{mysticevent.time}}</span>
+            </span>
+            <span class="pull-right">
+              <button class="btn btn_color btn-xs" ng-click="editMEvent(mysticevent._id)"><span class="glyphicon glyphicon-pencil"></button>
+              &nbsp
+              <button class="btn btn_color btn-xs" ng-click="removeMEvent(mysticevent._id)"><span class="glyphicon glyphicon-trash"></button>
+            </span>
+            <br/>
+          </div>
+        </div>
+      </div>
+      <!--End of Display Events-->
+    </div><!--End of row-->
+  </div><!--End of container-->
+</section>

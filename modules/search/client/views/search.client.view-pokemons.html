@@ -1,0 +1,36 @@
+<section ng-data-controller="PokemonsController">
+  <div class="m_tbtm_30px container">
+    <div class="row">
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <form class="form-inline" align="center">
+                <label for="search">Search a pokemon by name:</label>
+                <div class="form-group has-feedback" id="searchpokemon">
+                    <input type="text" class="form-control" id="search" ng-model='pokesearch'>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+    </div>
+</div>
+
+<hr class="">
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4" ng-repeat="pokemon in pokemons | filter: pokesearch">
+            <div class="panel panel-default">
+                <div class='panel-body'>
+                    <img ng-src="{{pokemon.img}}" class="img_border pull-left" width="150px" height="150px"/>
+                    
+                    <h4 class="m_top_30px color_header"><b>Pokedex No: </b><span class="color_text">#{{pokemon.id}}</span></h4>
+                    <h4 class="color_header"><b>Name:</b>  <span class="color_text">{{pokemon.name}}</span> </h4>
+                    
+                    <a ui-sref='pokemon({ id: pokemon.id })' class="bg_btn m_left_30px btn btn-inverse">View Stats</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+</section>

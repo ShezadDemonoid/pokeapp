@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <base href="/">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="fragment" content="!">
+
+  <!--Chart.js-->
+  <script type="text/javascript" src="/public/lib/chart.js/dist/Chart.min.js"></script>
+  <script type="text/javascript" src="/public/lib/angular-chart.js/dist/angular-chart.js"></script>
+  <!--statistics-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--ngmap -->
+  <meta name="description" content="Simple Map">
+  <meta name="keywords" content="ng-map,AngularJS,center">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <script src="script-tags-for-development.js"></script>
+  <script src="public/lib/ngmap/build/scripts/ng-map.min.js"></script>
+  <!--toastr-->
+  <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+
+  <!--Quiz-->
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- Apple META -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- Facebook META -->
+  <meta property="fb:app_id" content="{{facebookAppId}}">
+  <meta property="og:site_name" content="{{title}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="{{logo}}">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter META -->
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:url" content="{{url}}">
+  <meta name="twitter:image" content="{{logo}}">
+
+  
+  <!-- Fav Icon -->
+  <link href="{{favicon}}" rel="shortcut icon" type="image/x-icon">
+
+  <!-- Application CSS Files -->
+  {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+</head>
+
+<body class="ng-cloak">
+  <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+  <section class="content">
+    <section class="container">
+      {% block content %}{% endblock %}
+    </section>
+  </section>
+  <!-- toastr-->
+  <script type="text/javascript" src="mean/public/lib/angular-toastr/dist/angular-toastr.tpls.js"></script>
+  <!-- loading bar-->
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+ <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+  <!--maps-->
+  <script type="text/javascript" src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script> 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg7w5pvquSAE70LAJ64eZYLLyice130LI" ></script>
+  <!--PokeSearch-->
+  <link rel="stylesheet"  href="modules/search/client/css/style.css">
+
+  <!--Embedding The User Object-->
+  <script type="text/javascript">
+    var user = {{ user | json | safe }};
+  </script>
+
+  <!--Load The Socket.io File-->
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+  <!--Application JavaScript Files-->
+  {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
+
+  {% if livereload %}
+  <!--Livereload script rendered -->
+  <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
+  {% endif %}
+
+  
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <p><a href="/terms" class="navbar-btn btn-success btn pull-left">
+          <span class="glyphicon glyphicon-star"></span>  Terms and Conditions</a></p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <p class="text-center terms_m">© 2016 - Site Built By Shezad and Anna
+          </p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4"></div>
+      </div>    
+    </div>
+  </div>
+</body>
+
+</html>

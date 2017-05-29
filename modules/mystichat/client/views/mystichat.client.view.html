@@ -1,0 +1,55 @@
+<section ng-show="authentication.user.team == 'Mystic'" ng-controller="HomeController">
+  <div class="page-header">
+    <h1>Team Mystic Chat Forum</h1>
+  </div>
+  <!-- The message form -->
+  
+  <div class="container">
+	<div class="row">
+		<div class="col-sm-3 col-md-3 col-lg-3"></div>
+		<div class="col-sm-6 col-md-6 col-lg-6">
+			<div class="row">
+				<form class="col-sm-12 col-md-12 col-lg-12" ng-submit="vm.sendMessage();">
+					<fieldset class="row">
+					  <div class="input-group">
+						<input type="text" id="messageText" name="messageText" class="form-control" ng-model="vm.messageText" placeholder="Enter new message" autofocus>
+						<span class="input-group-btn">
+						  <button type="submit" class="btn btn-success" ng-disabled="!vm.messageText.length">Submit</button>
+						</span>
+					  </div>
+					</fieldset>
+				</form>
+			</div>
+			<br/>
+			<div class="row">
+				<ul class="list-unstyled" ng-repeat="message in vm.messages">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<!-- List all messages -->
+							<li class="col-sm-12 col-md-12 col-lg-12 chat-message">
+							  <img ng-src="/{{message.profileImageURL}}" alt="{{message.username}}" class="pull-left chat-profile-image" width="45px" height="45px" style="margin-right:8px; margin-top:-5px;"/>
+							  <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
+							  <div class="pull-left chat-message-details">
+								<strong ng-bind="message.username"></strong>
+								<br>
+								<span ng-bind="message.text"></span>
+							  </div>
+							</li>
+						</div>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-3 col-md-3 col-lg-3"></div>
+	</div>
+  </div>
+</section>
+
+<section ng-controller="HomeController" ng-show="authentication.user.team == 'Valor' || authentication.user.team == 'Instinct' " >
+    <h1>Forbidden</h1>
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You are not authorized to access this resource
+    </div>
+</section>

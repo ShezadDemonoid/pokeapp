@@ -1,0 +1,82 @@
+<section ng-show="authentication.user.team == 'Valor'">
+  <div class="container">
+        <div class="m_top_30px row">
+            <!-- Profile Details -->
+            <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div align="center">
+                                <p class="poketeam_header">Team Valor</p>
+                                <img src="modules/poketeam/client/img/valor.png" class="thumbnail img-responsive" width="200px" height="200px" />
+                            </div>
+                            <hr>
+                            <p align="center"><a class="btn btn_color btn-sm" href="/valorchat">Join Team Valor chat forum</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END of Profile Details -->
+            <!--Display post-->
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <a href="#">
+                                    <img class="media-object img-circle" src="modules/poketeam/client/img/valor.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                                </a>
+                            </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                <p class="para_color">{{valorpost.title}}</p>
+                            </div>
+                            <div class="col-sm-2 col-md-2 col-lg-2">
+                                <p class="time_color pull-right">{{valorpost.dateCreated | date:'h:mma'}}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div id="displayComments" ng-repeat="valorcomment in valorpost.valorcomments">
+                            <span class="pull-left">
+                                <img ng-src="{{valorcomment.user.profileImageURL}}" alt="{{valorcomment.user.displayName}}" class="img-responsive img-rounded" width="30px" height="30px" />
+                            </span>
+                            <div class="post_position">
+                                <b>{{valorcomment.user.displayName}}</b>
+                                <span>{{valorcomment.body}}</span>
+                                <span class="pull-right">
+                                  <button class="btn btn_color btn-xs" type="submit" ng-click="deleteVComment(valorcomment)" ng-if="valorcomment.user._id == authentication.user._id || authentication.user.roles == 'admin'">
+                                      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                  </button>
+                                </span>
+                            </div>
+                            <hr>
+                        </div>
+                        
+                        <span class="pull-left">
+                            <img ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="img-responsive img-rounded" width="40px" height="40px" />
+                        </span>
+                        <div class="post_position">
+                            <form ng-submit="addVComment()">
+                                <textarea class="form-control" style="resize:none;" rows="1" placeholder="Write a comment..." ng-model="body"></textarea>
+                                <br/>
+                                <p class="pull-right"><button type="submit" class="btn btn_color btn-xs">Post</button></p>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+            <div ng-include="'modules/poketeam/client/views/valorEvnt.client.view.html'"></div>
+        </div>
+        </div><!--END of row-->
+    </div><!--END of container-->
+</section>
+
+<section ng-if="authentication.user.team == 'Mystic' || authentication.user.team == 'Instinct' ">
+    <h1>Forbidden</h1>
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You are not authorized to access this resource
+    </div>
+</section>

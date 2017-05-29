@@ -1,0 +1,154 @@
+
+.tipo {
+    margin-left: 5px;
+}
+
+.normal{
+    background:#8a8a59;
+}
+.fire{
+    background:#f08030;
+}
+.water{
+    background:#6890f0;
+}
+.electric{
+    background:#f8d030;
+}
+.grass{
+    background:#78c850;
+}
+.ice{
+    background:#98d8d8;
+}
+.fighting{
+    background:#c03028;
+}
+.poison{
+    background:#a040a0;
+}
+.ground{
+    background:#e0c068;
+}
+.flying{
+    background:#a890f0;
+}
+.psychic{
+    background:#f85888;
+}
+.bug{
+    background:#a8b820;
+}
+.rock{
+    background:#b8a038;
+}
+.ghost{
+    background:#705898;
+}
+.dragon{
+    background:#7038f8;
+}
+.steel{
+    background:#b8b8d0;
+}
+.dark{
+    background:#705848;
+}
+.fairy{
+    background:#e898e8;
+}
+.curse{
+    background:#68a090;
+}
+.m_tbtm_30px{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.m_top_8px{
+    margin-top: 8px;
+}
+
+
+.m_top_30px{
+    margin-top: 30px;
+}
+
+.m_top_60px{
+    margin-top: 60px;
+}
+.m_btm_30px{
+    margin-bottom: 30px;
+}
+.m_left_30px{
+    margin-left: 30px;
+}
+.img_border{
+    border:1px solid lightgrey;
+    margin-right: 20px;
+}
+.header_4{
+    font-weight: bold;
+}
+
+.pokemon_size{
+    height: 400px;
+}
+
+.table_stats{
+    background-color: #e8eaed;
+    font-weight: bold;
+}
+
+.hover_title{
+    cursor: pointer;
+}
+
+div.scroll{
+    height:200px;
+    overflow: scroll;
+}
+
+.stats_border{
+    border:2px solid #e6fff3;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.color_text{
+    color: #00cc99;
+}
+
+.color_header{
+    color:#3d3d29;
+}
+
+.bg_table{
+    background-color: #ccccb3;
+}
+
+.borderless th, .borderless td{
+    border:none !important;
+}
+
+.bg_btn{
+    background-color: white;
+    color:#00e6ac;
+    border:1px solid #00e6ac !important;
+}
+
+.bg_btn:hover{
+    background-color: #00e6ac!important;
+    color:white !important;
+}
+
+#searchpokemon input[type="text"]:focus{
+    border-color: #00e6ac !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
+    outline: 0 none !important;
+}
+
+.pokedex_table{
+    background-color: white;
+    border:1px solid #00e6ac !important;
+}

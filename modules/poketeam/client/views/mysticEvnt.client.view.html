@@ -1,0 +1,30 @@
+<section>
+	<div class="panel panel-success" ng-controller="MysticEventsCtrl">
+		<div class="panel-heading"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Next Event</div>
+		<div class="panel-body" ng-repeat="mysticevent in mysticevents | limitTo: 1">
+			<table>
+				<tr>
+					<td class="event_date">{{mysticevent.date}}</td>
+					<td class="event_title">&nbsp&nbsp&nbsp&nbsp {{mysticevent.title}}</td>
+				</tr>
+			</table>
+			<br/>
+			<p>{{mysticevent.info}}</p>
+			<div class="pull-right">
+				<span class="event_date glyphicon glyphicon-globe">{{mysticevent.location}}</span>
+				&nbsp&nbsp&nbsp&nbsp
+				<span class="event_date glyphicon glyphicon-time">{{mysticevent.time}}</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-success" ng-controller="TrainersListController">
+		<div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Mystic Trainers</div>
+		<div class="panel-body">
+			<div class="col-sm-4" ng-repeat="user in userStuff | orderBy: 'created' | limitTo: 3" ng-if="user.team == 'Mystic'">
+				<img class="media-object img-thumbnail" ng-src="{{user.profileImageURL}}" width="50px" height="5px" style="margin-right:8px; margin-top:-5px;"><br/>
+				{{user.displayName}}
+			</div>
+		</div>
+	</div>
+</section>

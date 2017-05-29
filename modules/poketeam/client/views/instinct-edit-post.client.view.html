@@ -1,0 +1,48 @@
+<section ng-show="authentication.user.roles == 'admin'">
+    <div class="container">
+        <div class="m_top_30px row">
+            <!-- Profile Details -->
+            <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div align="center">
+                                <p class="poketeam_header">Team Instinct</p>
+                                <img src="modules/poketeam/client/img/instinct.png" class="thumbnail img-responsive" width="200px" height="200px" />
+                            </div>
+                            <hr>
+                            <p align="center"><a class="btn btn_color btn-sm" href="/instinctchat">Join Team Instinct chat forum</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END of Profile Details -->
+            <!--Edit Post-->
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <h3 class="text-center">Edit Post</h3>
+                <form ng-submit="updateIPost()">
+                    <span class="form-group">
+                        <textarea class="form-control" style="resize:none;" rows="2" ng-model="instinctpost.title"></textarea>
+                        <br/>
+                        <span class="pull-right">
+                            <button class="btn btn_color btn-xs" type="submit">Update</button>
+                        </span>
+                    </span>
+                </form>
+            </div>
+            <!--End of edit post-->
+            <div class="col-sm-3 col-md-3 col-lg-3">
+              <div ng-include="'modules/poketeam/client/views/instinctEvnt.client.view.html'"></div>
+            </div>
+        </div><!--end of row-->
+    </div><!--end of container-->
+</section>
+
+<section ng-if="authentication.user.roles != 'admin' || authentication.user.team == 'Mystic' || authentication.user.team == 'Valor' ">
+    <h1>Forbidden</h1>
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You are not authorized to access this resource
+    </div>
+</section>

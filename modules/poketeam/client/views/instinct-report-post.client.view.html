@@ -1,0 +1,70 @@
+<section ng-show="authentication.user.team == 'Instinct'"  ng-hide="authentication.user.roles == 'admin'">
+    <div class="container">
+        <div class="m_top_30px row">
+            <!-- Profile Details -->
+            <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div align="center">
+                                <p class="poketeam_header">Team Instinct</p>
+                                <img src="modules/poketeam/client/img/instinct.png" class="thumbnail img-responsive" width="200px" height="200px" />
+                            </div>
+                            <hr>
+                            <p align="center"><a class="btn btn_color btn-sm" href="/instinctchat">Join Team Instinct chat forum</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END of Profile Details -->
+            <!--Report Form-->
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <form ng-submit="reportIPost()">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="optionsIReport" ng-value="'It is annoying or not interesting.'">
+                                It is annoying or not interesting.
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="optionsIReport" ng-value="'It is offensive.'">
+                                It is offensive.
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="optionsIReport" ng-value="'I think it should not be on PokeApp.'">
+                                I think it should not be on PokeApp.
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="optionsIReport" ng-value="'It is a spam.'">
+                                It is a spam.
+                        </label>
+                    </div>
+                    <span class="pull-right">
+                        <button class="btn btn_color btn-xs" type="submit">Report</button>
+                    </span>
+                </form>
+            </div>
+            <!--End of Report Form-->
+            <!--List of events-->
+            <div class="col-sm-3 col-md-3 col-lg-3">
+              <div ng-include="'modules/poketeam/client/views/instinctEvnt.client.view.html'"></div>
+            </div>
+            <!--END of list of events-->
+
+        </div><!-- END of row -->
+    </div><!-- END of container -->
+</section>
+
+<section ng-if="authentication.user.roles == 'admin' || authentication.user.team == 'Mystic' || authentication.user.team == 'Valor' ">
+    <h1>Forbidden</h1>
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You are not authorized to access this resource
+    </div>
+</section>

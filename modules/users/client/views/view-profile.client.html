@@ -1,0 +1,89 @@
+<section ng-controller="HomeController" ng-show="authentication.user">
+    <div class="mainbody container-fluid">
+        <div class="m_top_100px row">
+            <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div align="center">
+                                <img ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="thumbnail img-responsive" width="200px" height="200px" />
+                            </div>
+                            <hr>
+                            <span class="">
+                                <a href="#" class="btn btn-link" style="text-decoration:none;">
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true" title="Message"></span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p_left_30px col-sm-6 col-md-6 col-lg-6">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h1 class="panel-title" style="font-size:20px;"><span ng-bind="authentication.user.displayName"></span></h1>
+                    </div>
+                </div>
+                <div class="m_top_30px row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <span><b>About: </b></span>{{authentication.user.moreInfo}}
+                                <br/><br/>
+                                <span><b>PokeTeam: </b> {{authentication.user.team}} </span>
+                                <br/><br/>
+                                <span><b>Date Joined: </b> {{authentication.user.created | date:'mediumDate'}} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Followers</div>
+                    <div class="panel-body"></div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Followed</div>
+                    <div class="panel-body"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!--<span class="">
+                            <a href="#" class="btn btn-link" style="text-decoration:none;"></a><span class="glyphicon glyphicon-envelope" aria-hidden="true" title="Message"></span></span>
+                            <h3><strong>Info:</strong></h3>
+                            <p>{{authentication.user.moreInfo}}</p>
+                            <hr>-->
+        <!--<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="pull-left">
+                        <a href="#">
+                            <img class="media-object img-circle" ng-src="{{authentication.user.profileImageURL}}" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                        </a>
+                    </div>
+                    <h4><a href="#" style="text-decoration:none;"><strong><span ng-bind="authentication.user.displayName"></span></strong></a></h4>
+                    <span>
+                    </span>
+                    <hr>
+                    <form name="" ng-submit="" novalidate autocomplete="off">
+                        <div class="form-group" show-errors>
+                            <div class="post-content">
+                                <textarea class="form-control" style="resize:none;" rows="3" placeholder="What's on your mind?'" name="userpost" ng-model="user.userpost"></textarea>
+                            </div>
+                            <hr>
+                            <div class="pull-right">
+                                <button class="btn btn-success" type="submit" id="submitPost">Post</button>
+                            </div>
+                            <div ng-show="success" class="text-center text-success">
+                                <strong>Post Saved Successfully</strong>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>-->

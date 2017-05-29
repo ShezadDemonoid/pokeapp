@@ -1,0 +1,41 @@
+.poketeam_header{
+    font-weight: bold;
+    font-size: 20px;
+    color: #757575;
+}
+
+.post_position{
+    margin-left: 60px;
+}
+
+.bg_poketeam{
+    /*background-color: #F5F7F8;*/
+	background-color: white;
+}
+
+.btn_color{
+    background-color: #009688;
+    color:white;
+    font-weight: bold;
+}
+
+.time_color{
+    color: #81CBC4;
+    font-size: 10px;
+}
+
+.para_color{
+    color:#464646;
+}
+
+.event_header{
+    color: #757575;
+}
+
+.event_date{
+    color: #009688;
+}
+
+.event_title{
+    color: #81CBC4;
+}

@@ -1,0 +1,96 @@
+<section ng-controller="PokemonDetailController">
+    <div class="m_top_8px container">
+    <div class="row" align="center">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <img ng-src='{{pokemon.img}}' class="img-responsive pokemon_size"/>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <table class="m_top_60px">
+                <tr>
+                    <td>
+                        <h4 class="color_header"><b>Pokedex Number:</b></h4>
+                    </td>
+                    <td>
+                        <h4>#{{pokemon.national_id}}</h4>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4 class="color_header"><b>Name:</b></h4>
+                    </td>
+                    <td>
+                        <h4 class="color_text">{{pokemon.name}}</h4>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h4 class="color_header"><b>Type:</b></h4>
+                    </td>
+                    <td>
+                        <span ng-repeat="type in pokemon.types" class='label type' ng-class='type.name'>
+                            {{type.name}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4 class="color_header"><b>Height:</b></h4>
+                    </td>
+                    <td>
+                        <h4 class="color_text">{{pokemon.height /10}}m</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4 class="color_header"><b>Weight:</b></h4>
+                    </td>
+                    <td>
+                        <h4 class="color_text">{{pokemon.weight /10}} kg</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4 class="color_header"><b>Species:</b></h4>
+                    </td>
+                    <td>
+                        <h4 class="color_text">{{pokemon.species}}</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4 class="color_header"><b>Egg Groups:</b></h4>
+                    </td>
+                    <td>
+                        <ul class="m_top_8px">
+                            <li ng-repeat="egg_gp in pokemon.egg_groups" class="color_text">
+                                {{egg_gp.name}}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <tabset>
+            <tab heading="Base Stats" >
+                <ui-view name='base'></ui-view>
+            </tab>
+
+            <tab heading="Moves" >
+                <ui-view name='moves'></ui-view>
+            </tab>
+            
+            <tab heading="Evolution" >
+                <ui-view name='evo'></ui-view>
+            </tab>
+        </tabset>
+    </div>
+
+</div>
+
+</section>

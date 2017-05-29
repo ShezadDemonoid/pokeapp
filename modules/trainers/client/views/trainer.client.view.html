@@ -1,0 +1,55 @@
+<section ng-controller="HomeController" ng-show="authentication.user">
+    <div class="mainbody container-fluid" ng-controller="TrainerDetailController">
+        <div class="m_top_100px row">
+            <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div align="center">
+                                <img ng-src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="thumbnail img-responsive" width="200px" height="200px" />
+                            </div>
+                            <hr>
+                            <span class="">
+                                <a href="#" class="btn btn-link" style="text-decoration:none;">
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true" title="Message"></span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p_left_30px col-sm-6 col-md-6 col-lg-6">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h1 class="panel-title" style="font-size:20px;"><span ng-bind="user.displayName"></span></h1>
+                    </div>
+                </div>
+                <div class="m_top_30px row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <span><b>About: </b></span>{{user.moreInfo}}
+                                <br/><br/>
+                                <span><b>PokeTeam: </b> {{user.team}} </span>
+                                <br/><br/>
+                                <span><b>Date Joined: </b> {{user.created | date:'mediumDate'}} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Followers</div>
+                    <div class="panel-body"></div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Followed</div>
+                    <div class="panel-body"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

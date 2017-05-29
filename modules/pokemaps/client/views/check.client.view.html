@@ -1,0 +1,230 @@
+<section data-ng-controller="PokemapsController">
+  <div class="container">
+    <div class="row">
+      <h2>Add Pokemon</h2>
+      
+      <div class="col-sm-8 col-md-8 col-lg-8">
+        <br/>
+        <div map-lazy-load="https://maps.google.com/maps/api/js">
+          <ng-map zoom="6" center="{{address}}" on-click="vm.placeMarker()"></ng-map>
+          
+          <br/>Address : <input ng-model="address" />
+        </div>
+      </div>
+      
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-md-12">
+         <br/>
+         <form name="pokemapForm" class="form-horizontal" ng-submit="create(pokemapForm.$valid)" novalidate>
+           <fieldset>
+             <div class="form-group" show-errors>
+               <label for="title">Select a pokemon</label>
+               <select name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
+                 <option data-thumbnail= "modules/pokemaps/client/img/001.png"value="bulbasaur">Bulbasaur</option>
+                 <option data-thumbnail= "modules/pokemaps/client/img/002.png" value="Ivysaur">Ivysaur</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/003.png"value="Venusaur">Venusaur</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/004.png"value="Charmander">Charmander</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/005.png"value="Charmeleon">Charmeleon</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/006.png"value="Charizard">Charizard</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/007.png"value="Squirtle">Squirtle</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/008.png"value="Wartortle">Wartortle</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/009.png"value="Blastoise">Blastoise</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/010.png"value="Caterpie">Caterpie</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/011.png"value="Metapod">Metapod</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/012.png"value="Butterfree">Butterfree</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/013.png"value="Weedle">Weedle</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/014.png"value="Kakuna">Kakuna</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/015.png"value="Beedrill">Beedrill</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/016.png"value="Pidgey">Pidgey</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/017.png"value="Pidgeotto">Pidgeotto</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/018.png"value="Pidgeot">Pidgeot</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/019.png"value="Rattata">Rattata</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/020.png"value="Raticate">Raticate</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/021.png"value="Spearow">Spearow</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/022.png"value="Fearow">Fearow</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/023.png"value="Ekans">Ekans</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/024.png"value="Arbok">Arbok</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/025.png"value="Pikachu">Pikachu</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/026.png"value="Raichu">Raichu</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/027.png"value="Sandshrew">Sandshrew</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/028.png"value="Sandslash">Sandslash</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/029.png"value="Nidoran ♀">Nidoran ♀</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/030.png"value="Nidorina">Nidorina</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/031.png"value="Nidoqueen">Nidoqueen</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/032.png"value="Nidoran ♂">Nidoran ♂</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/033.png"value="Nidorino">Nidorino</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/034.png"value="Nidoking">Nidoking</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/035.png"value="Clefairy">Clefairy</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/036.png"value="Clefable">Clefable</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/037.png"value="Vulpix">Vulpix</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/038.png"value="Ninetales">Ninetales</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/039.png"value="Jigglypuff">Jigglypuff</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/040.png"value="Wigglytuff">Wigglytuff</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/041.png"value="Zubat">Zubat</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/042.png"value="Golbat">Golbat</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/043.png"value="Oddish">Oddish</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/044.png"value="Gloom">Gloom</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/045.png"value="Vileplume">Vileplume</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/046.png"value="Paras">Paras</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/047.png"value="Parasect">Parasect</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/048.png"value="Venonat">Venonat</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/049.png"value="Venomoth">Venomoth</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/050.png"value="Diglett">Diglett</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/051.png"value="Diglett">Dugtrio
+                <option data-thumbnail= "modules/pokemaps/client/img/052.png"value="Meowth">Meowth</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/053.png"value="Persian">Persian</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/054.png"value="Psyduck">Psyduck</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/055.png"value="Golduck">Golduck</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/056.png"value="Mankey">Mankey</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/057.png"value="Primeape">Primeape</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/058.png"value="Growlithe">Growlithe</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/059.png"value="Arcanine">Arcanine</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/060.png"value="Poliwag">Poliwag</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/061.png"value="Poliwhirl">Poliwhirl</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/062.png"value="Poliwrath">Poliwrath</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/063.png"value="Abra">Abra</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/064.png"value="Kadabra">Kadabra</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/065.png"value="Alakazam">Alakazam</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/066.png"value="Machop">Machop</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/067.png"value="Machoke">Machoke</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/068.png"value="Machamp">Machamp</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/069.png"value="Bellsprout">Bellsprout</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/070.png"value="Weepinbell">Weepinbell</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/071.png"value="Victreebel">Victreebel</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/072.png"value="Tentacool">Tentacool</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/073.png"value="Tentacruel">Tentacruel</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/074.png"value="Geodude">Geodude</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/075.png"value="Graveler">Graveler</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/076.png"value="Golem">Golem</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/077.png"value="Ponyta">Ponyta</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/078.png"value="Rapidash">Rapidash</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/079.png"value="Slowpoke">Slowpoke</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/080.png"value="Slowbro">Slowbro</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/081.png"value="Magnemite">Magnemite</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/082.png"value="Magneton">Magneton</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/083.png"value="Farfetch'd">Farfetch'd</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/084.png"value="Doduo">Doduo</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/085.png"value="Dodrio">Dodrio</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/086.png"value="Seel">Seel</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/087.png"value="Dewgong">Dewgong</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/088.png"value="Grimer">Grimer</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/089.png"value="Muk">Muk</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/090.png"value="Shellder">Shellder</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/091.png"value="Cloyster">Cloyster</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/092.png"value="Gastly">Gastly</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/093.png"value="Haunter">Haunter</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/094.png"value="Gengar">Gengar</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/095.png"value="Onix">Onix</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/096.png"value="Drowzee">Drowzee</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/097.png"value="Hypno">Hypno</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/098.png"value="Krabby">Krabby</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/099.png"value="Kingler">Kingler</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/100.png"value="Voltorb">Voltorb</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/101.png"value="Electrode">Electrode</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/102.png"value="Exeggcute">Exeggcute</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/103.png"value="Exeggutor">Exeggutor</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/104.png"value="Cubone">Cubone</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/105.png"value="Marowak">Marowak</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/106.png"value="Hitmonlee">Hitmonlee</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/107.png"value="Hitmonchan">Hitmonchan</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/108.png"value="Lickitung">Lickitung</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/109.png"value="Koffing">Koffing</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/110.png"value="Weezing">Weezing</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/111.png"value="Rhyhorn">Rhyhorn</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/112.png"value="Rhydon">Rhydon</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/113.png"value="Chansey">Chansey</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/114.png"value="Tangela">Tangela</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/115.png"value="Kangaskhan">Kangaskhan</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/116.png"value="Horsea">Horsea</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/117.png"value="Seadra">Seadra</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/118.png"value="Goldeen">Goldeen</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/119.png"value="Seaking">Seaking</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/120.png"value="Staryu">Staryu</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/121.png"value="Starmie">Starmie</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/122.png"value=">Mr.Mime">Mr.Mime</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/123.png"value="Scyther">Scyther</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/124.png"value="Jynx">Jynx</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/125.png"value="Electabuzz">Electabuzz</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/126.png"value="Magmar">Magmar</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/127.png"value="Pinsir">Pinsir</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/128.png"value="Tauros">Tauros</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/129.png"value="Magikarp">Magikarp</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/130.png"value="Gyarados">Gyarados</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/131.png"value="Lapras">Lapras</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/132.png"value="Ditto">Ditto</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/133.png"value="Eevee">Eevee</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/134.png"value="Vaporeon">Vaporeon</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/135.png"value="Jolteon ">Jolteon </option>
+                <option data-thumbnail= "modules/pokemaps/client/img/136.png"value="Flareon">Flareon</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/137.png"value="Porygon ">Porygon </option>
+                <option data-thumbnail= "modules/pokemaps/client/img/138.png"value="Omanyte">Omanyte</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/139.png"value="Omastar">Omastar</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/140.png"value="Kabuto">Kabuto</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/141.png"value="Kabutops">Kabutops</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/142.png"value="Aerodactyl">Aerodactyl</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/143.png"value="Snorlax">Snorlax</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/144.png"value="Articuno">Articuno</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/145.png"value="Zapdos">Zapdos</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/146.png"value="Moltres">Moltres</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/147.png"value="Dratini">Dratini</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/148.png"value="Dragonair">Dragonair</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/149.png"value="Dragonite">Dragonite</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/150.png"value="Mewtwo">Mewtwo</option>
+                <option data-thumbnail= "modules/pokemaps/client/img/151.png"value="Mew">Mew</option>
+               </select>
+
+          <div ng-messages="pokemapForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Pokemon is required.</p>
+          </div>
+
+        </div>
+
+        <!--Additional info-->
+        <div class="form-group">
+          <label for="content">Additional info(optional)</label>
+          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="4" placeholder="write relevant info..." style="resize:none;"></textarea>
+        </div>
+        <!-- lat -->
+
+				<div class="form-group">
+					<label class="control-label" for="content">Latitude</label>
+					<div class="controls">
+            <textarea name="lat" data-ng-model="lat" id="lat" class="form-control" value={{lat}} cols="10" rows="1" placeholder="Latitude" style="resize:none;"></textarea>
+					</div>
+				</div>
+
+				<!-- lon -->
+				<div class="form-group">
+					<label class="control-label" for="content">Longitude</label>
+					<div class="controls">
+						<textarea name="lon" data-ng-model="lon" id="lon"  value={{lon}} class="form-control" cols="10" rows="1" placeholder="Longitude" style="resize:none;"></textarea>
+					</div>
+				</div>
+
+         <!--<img ng-src="{{icon[0].icons}}"></img>
+         <img ng-src="{{icon[1].icons}}"></img>-->
+
+        <div class="form-group">
+          <input type="submit" class="btn btn_color btn-sm" value="Add pokemon">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+    
+    <script type="text/javascript" src="modules/pokemaps/client/js/jquery.js"></script>
+    <script type="text/javascript" src="modules/pokemaps/client/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="modules/pokemaps/client/js/bootstrap-select.js"></script>
+          <script type="text/javascript">
+              $(document).ready(function(){
+                  $('.form-control').selectpicker();
+              });
+          </script>
+
+         
+    
+      </div>
+    </div>
+  </div>
+</section>

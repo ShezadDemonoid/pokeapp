@@ -1,0 +1,135 @@
+<section>
+    <div class="m_top_30px container">
+    <div class="row">
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="stats_border col-sm-6 col-md-6 col-lg-6">
+            <div class="table-responsive">
+                <table class="table borderless">
+                    <tr>
+                        <th colspan="2" class="text-center">Base Stats</th>
+                    </tr>
+                    <tr class="bg_table">
+                        <td>
+                            Base HP
+                        </td>
+                        <td>
+                            {{pokemon.hp}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Base Attack
+                        </td>
+                        <td>
+                            {{pokemon.attack}}
+                        </td>
+                    </tr>
+
+                    <tr class="bg_table">
+                        <td>
+                            Base Defense
+                        </td>
+                        <td>
+                            {{pokemon.defense}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Base Special Attack
+                        </td>
+                        <td>
+                            {{pokemon.sp_atk}}
+                        </td>
+                    </tr>
+
+                    <tr class="bg_table">
+                        <td>
+                            Base Special defense
+                        </td>
+                        <td>
+                            {{pokemon.sp_def}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Base Speed
+                        </td>
+                        <td>
+                            {{pokemon.speed}}
+                        </td>
+                    </tr>
+
+                    <tr class="bg_table">
+                        <td>
+                            <div class="m_top_8px">
+                                Abilities
+                            </div>
+                        </td>
+                        <td>
+                            <span ng-repeat="abilities in pokemon.abilities">
+                                - {{abilities.name}}<br/>
+                            </span>
+                            <!--<ul>
+                                <li ng-repeat="abilities in pokemon.abilities">
+                                    {{abilities.name}}
+                                </li>
+                            </ul>-->
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3"></div>
+    </div>
+    <div class="m_btm_30px"></div>
+</div>
+<!--<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="table-responsive">
+                <table class="m_top_30px table table-bordered">
+                    <tr align="center" class="table_stats">
+                        <td>HP</td>
+                        <td>Attack</td>
+                        <td>Defense</td>
+                        <td>Sp.Attack</td>
+                        <td>Sp.Defense</td>
+                        <td>Speed</td>
+                    </tr>
+                    <tr align="center">
+                        <td>
+                            {{pokemon.hp}}
+                        </td>
+
+                        <td>
+                            {{pokemon.attack}}
+                        </td>
+
+                        <td>
+                            {{pokemon.defense}}
+                        </td>
+
+                        <td>
+                            {{pokemon.sp_atk}}
+                        </td>
+
+                        <td>
+                            {{pokemon.sp_def}}
+                        </td>
+
+                        <td>
+                            {{pokemon.speed}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>-->
+</section>
