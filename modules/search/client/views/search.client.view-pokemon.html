@@ -1,6 +1,6 @@
 <section ng-controller="PokemonDetailController">
-    <div class="m_top_8px container">
-    <div class="row" align="center">
+    <div class="container">
+    <div class="m_top_8px row" align="center">
         <div class="col-sm-6 col-md-6 col-lg-6">
             <img ng-src='{{pokemon.img}}' class="img-responsive pokemon_size"/>
         </div>
@@ -11,7 +11,7 @@
                         <h4 class="color_header"><b>Pokedex Number:</b></h4>
                     </td>
                     <td>
-                        <h4>#{{pokemon.national_id}}</h4>
+                        <h4 class="color_text"> #{{pokemon.national_id}}</h4>
                     </td>
                 </tr>
 
@@ -77,15 +77,15 @@
 
     <div class="row">
         <tabset>
-            <tab heading="Base Stats" >
+            <tab heading="Base Stats" class="color_header2">
                 <ui-view name='base'></ui-view>
             </tab>
 
-            <tab heading="Moves" >
+            <tab heading="Moves" class="color_header2">
                 <ui-view name='moves'></ui-view>
             </tab>
             
-            <tab heading="Evolution" >
+            <tab heading="Evolution" class="color_header2">
                 <ui-view name='evo'></ui-view>
             </tab>
         </tabset>

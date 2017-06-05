@@ -39,11 +39,6 @@
   margin-top: 100px;
 }
 
-.bg_dashboard{
-  background-color: #252830;
-}
-
-
 .m_top_card1{
   margin-top: 8px;
 }
@@ -66,8 +61,4 @@
 
 .card1_title{
   color:white;
-}
-.logo-image{
-height: 100px;
-  width: 300px;
 }

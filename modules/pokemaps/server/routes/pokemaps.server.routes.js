@@ -21,7 +21,7 @@ module.exports = function (app) {
  // app.route('/api/pokemaps/:pokemapId/report').all(pokemapsPolicy.isAllowed)
    // .post(pokemaps.create);
 
-    app.route('/pokemaps/report').post(pokemaps.createReport);
+  app.route('/pokemaps/report').post(pokemaps.createReport);
 
   // Finish by binding the pokemap middleware
   app.param('pokemapId', pokemaps.pokemapByID);

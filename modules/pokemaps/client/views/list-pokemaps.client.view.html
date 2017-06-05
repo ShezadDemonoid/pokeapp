@@ -11,13 +11,42 @@
 
 		<div class="row">
 			<div class="col-sm-8 col-md-8 col-lg-8">
-				<div class="list-group">
+				<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-12">
+						<div class="panel panel-custom-legend">
+							<div class="panel-heading" style="font-size: 16px;">
+								<div class="row">
+									<div class="col-sm-4 col-md-4 col-lg-4">
+										<img src="modules/pokemaps/client/img/poke.png"/>
+										<span style="">Pokemon</span>
+									</div>
+									<div class="col-sm-4 col-md-4 col-lg-4">
+										<img src="modules/pokemaps/client/img/gym2.png"/>
+										<span style="">Pokegym</span>
+									</div>
+									<div class="col-sm-4 col-md-4 col-lg-4">
+										<img src="modules/pokemaps/client/img/stop2.png"/>
+										<span style="">Pokestop</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-12">
+						<div class="list-group">
+					
 					<!-- map -->
 		
 					<map center="[0,0]" zoom="3">
 						<marker ng-repeat='pokemap in pokemaps' position='[{{pokemap.lat}},{{pokemap.lon}}]' visible="true" on-click="gotolink(event,pokemap)" icon="modules/pokemaps/client/img/poke.png" >
 						</marker>
+						 <marker ng-repeat='gym in vm.gyms' position="[{{gym[0]}}, {{gym[1]}}]" icon="modules/pokemaps/client/img/gym2.png" ></marker>
+						 <marker ng-repeat='stop in vm.stops' position="[{{stop[0]}}, {{stop[1]}}]" icon="modules/pokemaps/client/img/stop2.png" ></marker>
 					</map>
+					<br/>
 
 					<a data-ng-repeat="pokemap in pokemaps" data-ng-href="/pokemaps/{{pokemap._id}}" class="list-group-item">
 						
@@ -27,12 +56,15 @@
 						<p class="list-group-item-text" data-ng-bind="pokemap.lat"></p>
 						<p class="list-group-item-text" data-ng-bind="pokemap.lon"></p>
 					</a>
+					
 
 				</div>
 
 				<!-- if theres no pokemaps length. -->
 				<div class="alert alert-warning text-center" data-ng-if="pokemaps.$resolved && !pokemaps.length">
 					No pokemons yet, why don't you <a href="/pokemaps/create">create one</a>?
+				</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-4 col-md-4 col-lg-4">

@@ -1,63 +1,47 @@
 <section ng-controller="HomeController">
-  <div class="row">
-    <div class="col-sm-4 col-md-4 col-lg-4"></div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <h1>Pokemon GO Teams</h1>
+  <div class="container">
+    <div class=" m_top_30px row">
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="wow zoomIn text-center" data-wow-duration="3s">
+          <p><img src="modules/poketeam/client/img/instinct.png" class="img-responsive img-thumbnail"></p>
+            <p class="poketeam_header">Team Instinct</p>
+				    <p>Team Instinct is led by Spark, who believes you will never lose when you trust your instincts. Spark studies Pokemon's intuition, and thinks that it's related to how Pokemon are hatched.The Yellow Team's logo is styled after the legendary bird Zapdos.</p>
+				</div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="wow zoomIn text-center" data-wow-duration="3s">
+          <p><img src="modules/poketeam/client/img/valor.png" class="img-responsive img-thumbnail"></p>
+            <p class="poketeam_header">Team Valor</p>
+				    <p>Team Valor is lead by the Candela, who values training and strength. Candela is researching ways to enhance Pokemon's natural power as she tries to find true strength.The Red Team's logo is styled after the legendary bird Moltres.</p>
+				</div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="wow zoomIn text-center" data-wow-duration="3s">
+          <p><img src="modules/poketeam/client/img/mystic.png" class="img-responsive img-thumbnail"></p>
+            <p class="poketeam_header">Team Mystic</p>
+				    <p>The leader of Team Mystic, Blanche, studies Pokemon evolution and claims they cannot lose with their utilization of calm analysis.The Blue Team's logo is styled after the legendary bird Articuno.</p>
+				</div>
+      </div>
     </div>
-    <div class="col-sm-4 col-md-4 col-lg-4"></div>
+
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4"></div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <p align="center" ng-if="authentication.user.team == 'Instinct'"><a class="bg_btn btn btn-inverse btn-lg" href="/profile-instinct">Go to page!</a></p>
+         <p align="center" ng-if="authentication.user.team == 'Valor'"><a class="bg_btn btn btn-inverse btn-lg" href="/profile-valor">Go to page!</a></p>
+         <p align="center" ng-if="authentication.user.team == 'Mystic'"><a class="bg_btn btn btn-inverse btn-lg" href="/profile-mystic">Go to page!</a></p>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4"></div>
+    </div>
+
+    <div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="panel panel-custom-legend">
+					<div class="panel-heading">
+            <p class="text-center"><b>Disclaimer: </b>You can only view the profile of the PokeTeam for which you registered for.</p>
+					</div>
+				</div>
+			</div>
+		</div>
   </div>
-  
-  <br><br><br>
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-2 col-md-2 col-lg-2">
-      <img class="img-responsive img-thumbnail" src="modules/poketeam/client/img/instinct.png" alt="">
-    </div>
-    
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <p class="poketeam_header">Team Instinct</p>
-      <p>Team Instinct is led by Spark, who believes you will never lose when you trust your instincts. Spark studies Pokemon's intuition, and thinks that it's related to how Pokemon are hatched.The Yellow Team's logo is styled after the legendary bird Zapdos. </p>
-      <p align="right" ng-if="authentication.user.team == 'Instinct'"><a class="btn btn-success btn-xs" href="/profile-instinct">Go to page!</a></p>
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-  </div>
-  
-  <br><br><br>
-  
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <p class="poketeam_header">Team Valor</p>
-      <p>Team Valor is lead by the Candela, who values training and strength. Candela is researching ways to enhance Pokemon's natural power as she tries to find true strength.The Red Team's logo is styled after the legendary bird Moltres. </p>
-      <p ng-if="authentication.user.team == 'Valor'"><a class="btn btn-success btn-xs" href="/profile-valor">Go to page!</a></p>
-    </div>
-    
-    <div class="col-sm-2 col-md-2 col-lg-2">
-      <img class="img-responsive img-thumbnail" src="modules/poketeam/client/img/valor.png" alt="">
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-  </div>
-  
-  <br><br><br>
-  
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-
-    <div class="col-sm-2 col-md-2 col-lg-2">
-      <img class="img-responsive img-thumbnail" src="modules/poketeam/client/img/mystic.png" alt="">
-    </div>
-    
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <p class="poketeam_header">Team Mystic </p>
-      <p>The leader of Team Mystic, Blanche, studies Pokemon evolution and claims they cannot lose with their utilization of calm analysis.The Blue Team's logo is styled after the legendary bird Articuno. </p>
-      <p align="right" ng-if="authentication.user.team == 'Mystic'"><a class="btn btn-success btn-xs" href="/profile-mystic">Go to page!</a></p>
-    </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3"></div>
-  </div>
-  
-  <br><br><br>
-
 </section>

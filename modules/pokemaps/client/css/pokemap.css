@@ -1,0 +1,8 @@
+.panel-custom-legend {
+    border-color: #99dfff !important;
+}
+.panel-custom-legend > .panel-heading {
+    background: #99dfff !important; 
+    color: #000000 !important;
+    border-color: #99dfff !important;
+}

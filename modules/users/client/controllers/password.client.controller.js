@@ -7,7 +7,7 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
 
     //If user is signed in then redirect back home
     if ($scope.authentication.user) {
-      $location.path('/');
+      $location.path('/pokemaps');
     }
 
     // Submit forgotten password account id

@@ -5,6 +5,10 @@
       <!--List of Guidelines-->
       <div class="col-sm-3 col-md-3 col-lg-3">
         <h4 class="text-center">Guidelines</h4>
+        <div class="well well-lg">
+          <p>Time format: xx a.m / p.m</p>
+          <p>Date format: DD/MM/YY</p>
+        </div>
         <br/>
       </div>
       <!--End of list of guidelines-->
@@ -56,13 +60,13 @@
 
           <div class="form-group pull-right">
             <span class="cols-sm-4">
-              <button class="btn btn_color btn-xs" ng-click="addMEvent()">Add</button>
+              <button class="bg_btn btn btn-inverse btn-md" ng-click="addMEvent()">Add</button>
             </span>
             <span class="cols-sm-4">
-              <button class="btn btn_color btn-xs" ng-click="updateMEvent()">Update</button>
+              <button class="bg_btn btn btn-inverse btn-md" ng-click="updateMEvent()">Update</button>
             </span>
             <span class="cols-sm-4">
-              <button class="btn btn_color btn-xs" ng-click="clearMEventFields()">Clear</button>
+              <button class="bg_btn btn btn-inverse btn-md" ng-click="clearMEventFields()">Clear</button>
             </span>
           </div>
         </form>
@@ -89,9 +93,9 @@
               <span class="event_date glyphicon glyphicon-time">{{mysticevent.time}}</span>
             </span>
             <span class="pull-right">
-              <button class="btn btn_color btn-xs" ng-click="editMEvent(mysticevent._id)"><span class="glyphicon glyphicon-pencil"></button>
+              <button class="bg_btn btn btn-inverse btn-xs" ng-click="editMEvent(mysticevent._id)"><span class="glyphicon glyphicon-pencil"></button>
               &nbsp
-              <button class="btn btn_color btn-xs" ng-click="removeMEvent(mysticevent._id)"><span class="glyphicon glyphicon-trash"></button>
+              <button class="bg_btn btn btn-inverse btn-xs" ng-click="removeMEvent(mysticevent._id)"><span class="glyphicon glyphicon-trash"></button>
             </span>
             <br/>
           </div>

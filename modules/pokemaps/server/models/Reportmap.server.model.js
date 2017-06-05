@@ -24,7 +24,7 @@ var ReportmapSchema = new Schema({
     type: Number
   },
   optionsMap: {
-      type: String
+    type: String
   },
   user: {
     type: Schema.ObjectId,

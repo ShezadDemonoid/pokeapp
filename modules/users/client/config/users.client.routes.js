@@ -24,27 +24,6 @@ angular
         url: '/password',
         templateUrl: 'modules/users/client/views/settings/change-password.client.view.html'
       })
-      .state('settings.statistics', {
-        url: '/statistics',
-        templateUrl: 'modules/users/client/views/settings/statistics.client.view.html',
-        data: {
-          roles: ['user', 'admin']
-        },
-        resolve: {
-          instinctpostPromise: ['instinctposts',
-          function(instinctposts){
-            return instinctposts.getAll();
-          }],
-          mysticpostPromise: ['mysticposts',
-          function(mysticposts){
-            return mysticposts.getAll();
-          }],
-          valorpostPromise: ['valorposts',
-          function(valorposts){
-            return valorposts.getAll();
-          }]
-        }
-      })
       .state('settings.picture', {
         url: '/picture',
         templateUrl: 'modules/users/client/views/settings/change-profile-picture.client.view.html'

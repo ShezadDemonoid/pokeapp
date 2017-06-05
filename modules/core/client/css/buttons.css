@@ -1,0 +1,41 @@
+.bg_btn{
+    background-color: white;
+    color:#00e6ac;
+    border:1px solid #00e6ac !important;
+}
+
+.bg_btn:hover{
+    background-color: #00e6ac!important;
+    color:white !important;
+}
+
+#searchbox input[type="text"]:focus{
+    border-color: #00e6ac !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
+    outline: 0 none !important;
+}
+
+#searchbox input[type="email"]:focus{
+    border-color: #00e6ac !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
+    outline: 0 none !important;
+}
+
+#searchbox textarea:focus{
+    border-color: #00e6ac !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
+    outline: 0 none !important;
+}
+
+.bg_btnHome{
+    background-color: #000000;
+    color:#ffffff;
+    border:2px solid #000000 !important;
+    font-size: 15px;
+}
+
+.bg_btnHome:hover{
+    background-color: #00e6ac!important;
+    color:white !important;
+     border:2px solid #00e6ac !important;
+}

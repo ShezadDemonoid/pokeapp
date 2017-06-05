@@ -6,7 +6,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading text-center">
-                                <a ng-model="collapsed" ng-click="collapsed1=!collapsed1" class="hover_title">Tutor Moves</a>
+                                <a ng-model="collapsed" ng-click="collapsed1=!collapsed1" class="hover_title"><h4>Tutor Moves</h4></a>
                             </div>
                                 <div class="panel-body" ng-show="collapsed1">
                                     <ul class="nav nav-pills">
@@ -27,7 +27,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading text-center">
-                                <a ng-model="collapsed" ng-click="collapsed2=!collapsed2" class="hover_title">Machine Moves</a>
+                                <a ng-model="collapsed" ng-click="collapsed2=!collapsed2" class="hover_title"><h4>Machine Moves</h4></a>
                             </div>
                                 <div class="panel-body scroll" ng-show="collapsed2">
                                     <ul class="nav nav-pills">
@@ -48,7 +48,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading text-center">
-                                <a ng-model="collapsed" ng-click="collapsed3=!collapsed3" class="hover_title">Egg Moves</a>
+                                <a ng-model="collapsed" ng-click="collapsed3=!collapsed3" class="hover_title"><h4>Egg Moves</h4></a>
                             </div>
                                 <div class="panel-body" ng-show="collapsed3">
                                     <ul class="nav nav-pills">
@@ -69,7 +69,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading text-center">
-                                <a ng-model="collapsed" ng-click="collapsed4=!collapsed4" class="hover_title">Other Moves</a>
+                                <a ng-model="collapsed" ng-click="collapsed4=!collapsed4" class="hover_title"><h4>Other Moves</h4></a>
                             </div>
                                 <div class="panel-body" ng-show="collapsed4">
                                     <ul class="nav nav-pills">
@@ -95,14 +95,14 @@
             </div>
             <div class='panel panel-default' ng-show='moves'>
                 <div class='panel-heading text-center'>
-                    {{moves.name}}
+                    <h4>{{moves.name}}</h4>
                 </div>
                 <div class='panel-body'>
-                    {{moves.description}}
+                    <p>{{moves.description}}</p>
                     <ul>
-                        <li><b>Power:</b> {{moves.power}}</li>
-                        <li><b>Accuracy:</b> {{moves.accuracy}}</li>
-                        <li><b>PP:</b> {{moves.pp}}</li>
+                        <li><p><b>Power:</b> {{moves.power}}</p></li>
+                        <li><p><b>Accuracy:</b> {{moves.accuracy}}</p></li>
+                        <li><p><b>PP:</b> {{moves.pp}}</p></li>
                 </div>
             </div>
         </div>

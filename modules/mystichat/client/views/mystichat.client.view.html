@@ -1,20 +1,20 @@
 <section ng-show="authentication.user.team == 'Mystic'" ng-controller="HomeController">
-  <div class="page-header">
-    <h1>Team Mystic Chat Forum</h1>
-  </div>
-  <!-- The message form -->
-  
   <div class="container">
+		<div class="page-header">
+			<h1>Team Mystic Chat Forum</h1>
+		</div>
+  <!-- The message form -->
+
 	<div class="row">
 		<div class="col-sm-3 col-md-3 col-lg-3"></div>
 		<div class="col-sm-6 col-md-6 col-lg-6">
 			<div class="row">
 				<form class="col-sm-12 col-md-12 col-lg-12" ng-submit="vm.sendMessage();">
 					<fieldset class="row">
-					  <div class="input-group">
+					  <div class="input-group" id="searchbox">
 						<input type="text" id="messageText" name="messageText" class="form-control" ng-model="vm.messageText" placeholder="Enter new message" autofocus>
 						<span class="input-group-btn">
-						  <button type="submit" class="btn btn-success" ng-disabled="!vm.messageText.length">Submit</button>
+						  <button type="submit" class="bg_btn btn btn-inverse" ng-disabled="!vm.messageText.length">Submit</button>
 						</span>
 					  </div>
 					</fieldset>

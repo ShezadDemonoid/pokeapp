@@ -1,25 +1,24 @@
 <section ng-controller="SettingsController">
-  <div class="row" ng-controller="HomeController">
-    <div class="m_top_30px">
-      <nav class="col-sm-2 col-md-2 col-lg-2">
-        <ul class="nav nav-pills nav-stacked">
-          <li ui-sref-active="active">
-            <a ui-sref="settings.profile">Edit Profile</a>
-          </li>
-          <li ui-sref-active="active">
-            <a ui-sref="settings.picture">Change Profile Picture</a>
-          </li>
-          <li ui-sref-active="active" ng-show="user.provider === 'local'">
-            <a ui-sref="settings.password">Change Password</a>
-          </li>
-          <li ui-sref-active="active" ng-show="user.provider === 'local'">
-            <a ui-sref="settings.statistics">Statistics</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="col-sm-10 col-md-10 col-lg-10 settings-view">
-      <div ui-view></div>
+  <div class="container">
+    <div class="row" ng-controller="HomeController">
+      <div class="m_top_30px">
+        <nav class="col-sm-2 col-md-2 col-lg-2">
+          <ul class="nav nav-pills nav-stacked">
+            <li ui-sref-active="active">
+              <a ui-sref="settings.profile">Edit Profile</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="settings.picture">Change Profile Picture</a>
+            </li>
+            <li ui-sref-active="active" ng-show="user.provider === 'local'">
+              <a ui-sref="settings.password">Change Password</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-sm-10 col-md-10 col-lg-10 settings-view">
+        <div ui-view></div>
+      </div>
     </div>
   </div>
 </section>

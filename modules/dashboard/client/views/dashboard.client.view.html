@@ -1,0 +1,202 @@
+<section ng-controller="HomeController">
+    <div class="container">
+        <!--First row-->
+        <div class="m_top_30px row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <table class="table table-bordered" id="table_brd1" data-ng-controller="ProfileInstinctController" ng-if="authentication.user.team == 'Instinct'">
+                    <tr>
+                        <td id="bg_rp">Recent Posts of Team Instinct:</td>
+                    </tr>
+                    <tr ng-repeat="instinctpost in instinctposts | limitTo: 5">
+                        <td>
+                            <a href="/instinctposts/{{instinctpost._id}}" style="color:black;" class="fs_dashboard">{{instinctpost.title}}</a>
+                            <span class="pull-right">
+                                <a href="/instinctposts/{{instinctpost._id}}">Comments</a>({{instinctpost.instinctcomments.length}})
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table table-bordered" id="table_brd1" data-ng-controller="ProfileMysticController" ng-if="authentication.user.team == 'Mystic'">
+                    <tr>
+                        <td id="bg_rp">Recent Posts of Team Mystic:</td>
+                    </tr>
+                    <tr ng-repeat="mysticpost in mysticposts | limitTo: 5">
+                        <td>
+                            <a href="/mysticposts/{{mysticpost._id}}" style="color:black;" class="fs_dashboard">{{mysticpost.title}}</a>
+                            <span class="pull-right">
+                                <a href="/mysticposts/{{mysticpost._id}}">Comments</a>({{mysticpost.mysticcomments.length}})
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table table-bordered" id="table_brd1" data-ng-controller="ProfileValorController" ng-if="authentication.user.team == 'Valor'">
+                    <tr>
+                        <td id="bg_rp">Recent Posts of Team Valor:</td>
+                    </tr>
+                    <tr ng-repeat="valorpost in valorposts | limitTo: 5">
+                        <td>
+                            <a href="/valorposts/{{valorpost._id}}" style="color:black;" class="fs_dashboard">{{valorpost.title}}</a>
+                            <span class="pull-right">
+                                <a href="/valorposts/{{valorpost._id}}">Comments</a>({{valorpost.valorcomments.length}})
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-5 col-md-5 col-lg-5">
+                <table class="table table-bordered" id="table_brd2" data-ng-controller="InstinctEventsCtrl" ng-if="authentication.user.team == 'Instinct'">
+                    <tr>
+                        <td colspan="3" id="bg_event">Events of Team Instinct:</td>
+                    </tr>
+                    <tr ng-repeat="instinctevent in instinctevents | limitTo: 5">
+                        <td class="fs_dashboard">{{instinctevent.date}}</td>
+                        <td class="fs_dashboard">{{instinctevent.title}}</td>
+                        <td class="fs_dashboard">{{instinctevent.info}}</td>
+                    </tr>
+                </table>
+
+                <table class="table table-bordered" id="table_brd2" data-ng-controller="MysticEventsCtrl" ng-if="authentication.user.team == 'Mystic'">
+                    <tr>
+                        <td colspan="3" id="bg_event">Events of Team Mystic:</td>
+                    </tr>
+                    <tr ng-repeat="mysticevent in mysticevents | limitTo: 5">
+                        <td class="fs_dashboard">{{mysticevent.date}}</td>
+                        <td class="fs_dashboard">{{mysticevent.title}}</td>
+                        <td class="fs_dashboard">{{mysticevent.info}}</td>
+                    </tr>
+                </table>
+
+                <table class="table table-bordered" id="table_brd2" data-ng-controller="ValorEventsCtrl" ng-if="authentication.user.team == 'Valor'">
+                    <tr>
+                        <td colspan="3" id="bg_event">Events of Team Valor:</td>
+                    </tr>
+                    <tr ng-repeat="valorevent in valorevents | limitTo: 5">
+                        <td class="fs_dashboard">{{valorevent.date}}</td>
+                        <td class="fs_dashboard">{{valorevent.title}}</td>
+                        <td class="fs_dashboard">{{valorevent.info}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-default">
+                    <div class="panel-body" style="height: 120px; background-color: #46BFBD;">
+                        <div class="m_top_card3 pull-left">
+                            <i class="fa fa-calendar fa-4x"></i>
+                        </div>
+                        <div class="pull-right" ng-if="authentication.user.team == 'Instinct'" ng-controller="InstinctEventsCtrl">
+                            <p class="card1_num">{{instinctevents.length}}</p>
+                            <p style="color:white;">Total Events!</p>
+                        </div>
+                        <div class="pull-right" ng-if="authentication.user.team == 'Mystic'" ng-controller="MysticEventsCtrl">
+                            <p class="card1_num">{{mysticevents.length}}</p>
+                            <p style="color:white;">Total Events!</p>
+                        </div>
+                        <div class="pull-right" ng-if="authentication.user.team == 'Valor'" ng-controller="ValorEventsCtrl">
+                            <p class="card1_num">{{valorevents.length}}</p>
+                            <p style="color:white;">Total Events!</p>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of First row-->
+
+        <hr>
+
+        <!--Second row-->
+        <div class="m_top_30px row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <table class="table table-bordered" id="table_brd3" data-ng-controller="PokemapsController" data-ng-init="find()">
+                    <tr>
+                        <td id="bg_lpoke">List of Pokemons that I've added:</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/pokemaps/create"><span class="glyphicon glyphicon-plus"></span>Add a pokemon</a></td>
+                    </tr>
+                    <tr ng-repeat="pokemap in pokemaps | limitTo: 10" ng-if="authentication.user._id == pokemap.user._id">
+                        <td class="fs_dashboard">{{pokemap.title}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-5 col-md-5 col-lg-5">
+                <table class="table table-bordered" id="table_brd4" data-ng-controller="PokemapsController" data-ng-init="find()">
+                    <tr>
+                        <td id="bf_lapoke">Last added Pokemons:</td>
+                    </tr>
+                    <tr ng-repeat="pokemap in pokemaps | limitTo: 10">
+                        <td class="fs_dashboard">{{pokemap.title}}</td>
+                    </tr>
+                </table>
+            </div>
+             <div class="col-sm-3 col-md-3 col-lg-3">
+                 <div class="panel panel-default" data-ng-controller="PokemapsController" data-ng-init="find()">
+                    <div class="panel-body" style="height: 120px; background-color: #9F86FF;">
+                        <div class="m_top_card2 pull-left">
+                            <i class="fa fa-plus-circle fa-5x"></i>
+                        </div>
+                        <div class="pull-right">
+                            <p class="card1_num">{{pokemaps.length}}</p>
+                            <p style="color:white;">Total Pokemons</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <!--End of Second row-->
+
+        <hr>
+
+        <!--Third row-->
+        <div class="m_top_30px row" ng-controller="DashboardController">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="panel panel-custom-upteam">
+                    <div class="panel-heading" style="font-size: 16px;"><span class="panel-title">Number of users per team:</span></div>
+                    <div class='panel-body'>
+                        <div class="pull-left">
+                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-sm-9 col-md-9 col-lg-9">
+                                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data1" chart-labels="labels1"></canvas>
+                            </div>
+                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="pull-right">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <br/>
+                                <p><span id="n1">&#9632; </span> Number of Instinct users</p>
+                                <p><span id="n2">&#9632; </span> Number of Valor users</p>
+                                <p><span id="n3">&#9632; </span> Number of Mystic users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="panel panel-custom-nmf">
+                    <div class="panel-heading" style="font-size: 16px;"><span class="panel-title">Number of male & female users:</span></div>
+                    <div class='panel-body'>
+                        <div class="pull-left">
+                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-sm-9 col-md-9 col-lg-9">
+                                <canvas id="doughnut" class="chart chart-doughnut" chart-data="data2" chart-labels="labels2"></canvas>
+                            </div>
+                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="pull-right">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <br/>
+                                <p><span id="n3">&#9632; </span> Number of Male users</p>
+                                <p><span id="n2">&#9632; </span> Number of Female users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Third row-->
+
+    </div>
+</section>

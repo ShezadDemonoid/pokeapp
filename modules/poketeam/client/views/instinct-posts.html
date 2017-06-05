@@ -22,16 +22,16 @@
               <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-sm-2 col-md-2 col-lg-2">
+                            <div class="col-sm-1 col-md-1 col-lg-1">
                                 <a href="#">
-                                    <img class="media-object img-circle" src="modules/poketeam/client/img/instinct.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                                    <img class="media-object img-circle" src="modules/poketeam/client/img/instinct.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
                                 </a>
                             </div>
                             <div class="col-sm-8 col-md-8 col-lg-8">
                                 <p class="para_color">{{instinctpost.title}}</p>
                             </div>
-                            <div class="col-sm-2 col-md-2 col-lg-2">
-                                <p class="time_color pull-right">{{instinctpost.dateCreated | date:'h:mma'}}</p>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <p class="time_color pull-right">{{instinctpost.dateCreated | date:"MMMM dd,yyyy 'at' h:mma"}}</p>
                             </div>
                         </div>
                         <hr>
@@ -44,7 +44,7 @@
                                 <b>{{instinctcomment.user.displayName}}</b>
                                 <span>{{instinctcomment.body}}</span>
                                 <span class="pull-right">
-                                  <button class="btn btn_color btn-xs" type="submit" ng-click="deleteIComment(instinctcomment)" ng-if="instinctcomment.user._id == authentication.user._id || authentication.user.roles == 'admin'">
+                                  <button class="btn bg_btn btn-xs" type="submit" ng-click="deleteIComment(instinctcomment)" ng-if="instinctcomment.user._id == authentication.user._id || authentication.user.roles == 'admin'">
                                       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                   </button>
                                 </span>
@@ -56,10 +56,10 @@
                             <img ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="img-responsive img-rounded" width="40px" height="40px" />
                         </span>
                         <div class="post_position">
-                            <form ng-submit="addIComment()">
+                            <form ng-submit="addIComment()" id="searchbox">
                                 <textarea class="form-control" style="resize:none;" rows="1" placeholder="Write a comment..." ng-model="body"></textarea>
                                 <br/>
-                                <p class="pull-right"><button type="submit" class="btn btn_color btn-xs">Post</button></p>
+                                <p class="pull-right"><button type="submit" class="btn bg_btn btn-sm">Post</button></p>
                             </form>
                         </div>
                 </div>

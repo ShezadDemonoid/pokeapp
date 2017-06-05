@@ -19,7 +19,9 @@ angular.module('pokemaps').config(['$stateProvider',
       })  
       .state('pokemaps.list', {
         url: '',
-        templateUrl: 'modules/pokemaps/client/views/list-pokemaps.client.view.html'
+        templateUrl: 'modules/pokemaps/client/views/list-pokemaps.client.view.html',
+        controller: 'PokemapsController',
+        controllerAs: 'vm'
       })
      /* .state('pokemaps.create', {
         url: '/create',
